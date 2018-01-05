@@ -35,7 +35,7 @@ module.exports = {
               // extensions: /\.md/,
               path: PATH.join(cachePath, './md'), // 需要替换的目录
               replace: cmd.projectRoot, // 替换成目标目录
-              sep: '___',               // 文件名存储，文件夹+下划线间隔+文件名
+              sep: /___/g,               // 文件名存储，文件夹+下划线间隔+文件名
             }
           }
         ]
