@@ -26,18 +26,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.json$/,
+        test: /\.md$/,
         use: [
           {
-            loader: require.resolve('raw-tree-replace-loader'),
+            loader: require.resolve('raw-content-replace-loader'),
             options: {
-              include: /rdoc\.tree\.data\.json$/, // 检查包含的文件名字
-              extensions: /\.md/,
-              directoryTrees: { // 指定目录生成目录树，json
-                dir: cmd.markdownDirs,
-                mdconf: true,
-                extensions: /\.md/,
-              }
+              // include: /rdoc\.tree\.data\.json$/, // 检查包含的文件名字
+              // extensions: /\.md/,
+              path: PATH.join(cachePath, './md'), // 需要替换的目录
+              replace: cmd.projectRoot, // 替换成目标目录
+              sep: '___',               // 文件名存储，文件夹+下划线间隔+文件名
             }
           }
         ]

@@ -1,6 +1,6 @@
 {
   "name": "raw-content-replace-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Replaces the specified path file contents.",
   "main": "index.js",
   "scripts": {
